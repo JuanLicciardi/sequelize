@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.use('/', indexRouter);
-app.use(moviesRoutes);
+app.use('/movies',moviesRoutes);
 app.use(genresRoutes);
 
 app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));
