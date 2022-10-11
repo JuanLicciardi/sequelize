@@ -3,17 +3,83 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(151, 166, 214);
 }
 
-a {
-  color: #00B7FF;
-}
+
 img{
   width: 100%;
 }
 figure{
+  background-color: rgb(255, 255, 255);
   width: 20%;
+}
+
+.header_Gral{
+  display: flex;
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(99, 95, 95, 0.6),4px 4px 20px rgba(102, 97, 97, 0.4);
+  margin-bottom: 20px;
+
+
+}
+
+.caja_Menu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  gap: 20px;
+}
+
+.menu_Gral{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+ 
+}
+
+.menu_Gral ul{
+  list-style: none;
+}
+
+.menu_Gral a {
+  border : 2px solid blue;
+  border-radius: 10px;
+  padding : 5px; 
+  text-decoration: none;
+  
+}
+
+.menu_Gral a:hover {
+  background-color: blue;
+  color:white;
+}
+
+
+details{
+  border: 2px solid red;
+
+}
+
+.sumario {
+  border : 2px solid blue;
+  border-radius: 10px;
+  padding : 5px; 
+  text-decoration: none;
+  list-style: none;
+  
+}
+
+.sumario:hover {
+  content: "+";
+  color:red;
+  
 }
