@@ -14,14 +14,6 @@ module.exports={
 
     },
 
-    new:(req,res) =>{
-
-    },
-
-    recommended:(req,res) =>{
-
-    },
-
     detail:(req,res) =>{
         db.Genre.findByPk(req.params.id)
             .then(genre => res.render('genresDetail',{genre}))

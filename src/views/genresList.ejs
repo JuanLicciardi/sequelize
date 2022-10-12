@@ -10,18 +10,19 @@
 </head>
 
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-      </figure>
-    <h1>LISTADO DE GENEROS</h1>
-    <ul>
-        <% for( let i = 0; i < genres.length; i++ ) { %>
-        <li>
-            <a href="/genres/detail/<%= genres[i].id %>"><%= genres[i].name %></a>
-        </li>
-        <% } %>
-
-    </ul>
+    <%- include('./partials/header') %> 
+    <main class="listado">
+        <div class="caja_listado">
+            <h1 class="titulo">LISTADO DE GENEROS</h1>
+            <ul>
+                <% for( let i = 0; i < genres.length; i++ ) { %>
+                <li>
+                    <a href="/genres/detail/<%= genres[i].id %>"><%= genres[i].name %></a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </main>
 </body>
 
 </html>

@@ -10,18 +10,21 @@
 </head>
 
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure>
-    <h1>LISTADO DE PELÍCULAS</h1>
-    <ul>
-        <% for( let i = 0; i < movies.length; i++ ) { %>
-        <li>
-            <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
-        </li>
-        <% } %>
-
-    </ul>
+    
+    <%- include('./partials/header') %> 
+    <main class="listado">
+        <div class="caja_listado">
+            <h1 class="titulo">LISTADO DE PELÍCULAS</h1>
+            <ul>
+                <% for( let i = 0; i < movies.length; i++ ) { %>
+                <li>
+                    <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
+                </li>
+                <% } %>
+            </ul>
+        
+        </div>
+    </main>
 </body>
 
 </html>

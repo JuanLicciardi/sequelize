@@ -5,34 +5,10 @@
     <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
-    <header class="header_Gral">
-      <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-      </figure>
 
-
-      <div class="caja_Menu">
-          <div class="menu_Gral">
-            <nav>
-              <ul class="menu_Gral_ul">
-                <li><a href="/">HOME</a></li>
-                <li><a href="">PELICULAS</a>
-                  <ul class="menu_Gral_ul">
-                    <li><a href="">OPCION 1</a></li>
-                    <li><a href="">OPCION 2</a></li>
-                    <li><a href="">OPCION 3</a></li>
-                  </ul>
-                </li>
-                <li><a href="">GENEROS</a></li>
-                <li><a href="">ACTORES</a></li>
-              </ul>
-            </nav>
-          </div>  
-      </div>    
-    </header>
+    <%- include('./partials/header') %> 
     
-    
-    
+       
     <h1><%= title %></h1>
     <p>Bienvenidos a <%= title %></p>
   </body>
