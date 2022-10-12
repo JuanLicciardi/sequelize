@@ -10,12 +10,16 @@
 <body>
     
     <%- include('./partials/header') %> 
-
-    <h1><%= actor.first_name %> <%= actor.last_name %>  </h1>
-    <br>
-    <p>FIRST NAME: <%= actor.first_name %> </p>
-    <p>LAST NAME: <%= actor.last_name %> </p>
-    <p>RATING: <%= actor.rating %> </p>
-
+    <main class="detalle">
+        <div class="caja_detalle">
+            <h1 class="titulo_Detalle"><%= actor.first_name %> <%= actor.last_name %>  </h1>
+            <p>FIRST NAME: <%= actor.first_name %> </p>
+            <p>LAST NAME: <%= actor.last_name %> </p>
+            <p>RATING: <%= actor.rating %> </p>
+            <div class="caja_Boton">
+                <a class="boton_Return" href="/actors/">Regresar</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

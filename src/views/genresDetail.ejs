@@ -10,11 +10,16 @@
 <body>
     
     <%- include('./partials/header') %> 
-
-    <h1><%= genre.name %> </h1>
-    <br>
-    <p>NAME: <%= genre.name %> </p>
-    <p>RANKIG: <%= genre.ranking %> </p>
-
+    <main class="detalle">
+        <div class="caja_detalle">
+            <h1><%= genre.name %> </h1>
+            <br>
+            <p>NAME: <%= genre.name %> </p>
+            <p>RANKIG: <%= genre.ranking %> </p>
+            <div class="caja_Boton">
+                <a class="boton_Return" href="/genres/">Regresar</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

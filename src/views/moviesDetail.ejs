@@ -10,13 +10,18 @@
 <body>
     
     <%- include('./partials/header') %> 
-
-    <h1><%= movie.title %> </h1>    
-    <br>
-    <p>RATING: <%= movie.rating %> </p>
-    <p>AWARDS: <%= movie.awards %> </p>
-    <p>LENGTH: <%= movie.length + ' min'%> </p>
-    <p>RELEASE DATE: <%= movie.release_date %> </p>
-
+    <main class="detalle">
+        <div class="caja_detalle">
+            <h1><%= movie.title %> </h1>    
+            <br>
+            <p>RATING: <%= movie.rating %> </p>
+            <p>AWARDS: <%= movie.awards %> </p>
+            <p>LENGTH: <%= movie.length + ' min'%> </p>
+            <p>RELEASE DATE: <%= movie.release_date %> </p>
+            <div class="caja_Boton">
+                <a class="boton_Return" href="/movies/">Regresar a Peliculas</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

@@ -43,3 +43,13 @@ ul > li > a:hover{
     background-color: blue;
     padding: 3px 15px;
 }
+
+.info{
+    color: red;
+    font-size: 14px;
+}
+
+.info a {
+    color: blue;
+    font-size: 18px;
+}

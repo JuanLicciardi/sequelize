@@ -9,16 +9,20 @@
 <body>
     
     <%- include('./partials/header') %> 
-
-    <h1>PELÍCULAS ORDENADAS POR POSICIÓN</h1>
-    <ul>
-        <% for( let i = 0; i < movies.length; i++ ) { %>
-        <li>
-            <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a> <br>
-            <%= 'RATING: ' + movies[i].rating %> 
-        </li>
-        <% } %>
-        
-    </ul>
+    <main class="listado">
+        <div class="caja_listado">
+            <h1>PELÍCULAS ORDENADAS POR POSICIÓN</h1>
+            <ul>
+                <% for( let i = 0; i < movies.length; i++ ) { %>
+                <li class="info">
+                    <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a> <br>
+                    <%= 'RATING: ' + movies[i].rating %> 
+                    <hr>
+                </li>
+                <% } %>
+                
+            </ul>
+        </div>
+    </main>
 </body>
 </html>
