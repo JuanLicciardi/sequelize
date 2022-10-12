@@ -14,72 +14,58 @@ body {
 img{
   width: 100%;
 }
+
 figure{
   background-color: rgb(255, 255, 255);
   width: 20%;
 }
 
-.header_Gral{
-  display: flex;
-  background-color: white;
-  box-shadow: 2px 2px 10px rgba(99, 95, 95, 0.6),4px 4px 20px rgba(102, 97, 97, 0.4);
-  margin-bottom: 20px;
-
-
-}
 
 .caja_Menu{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 80%;
-  gap: 20px;
+  background-color: rgb(44, 19, 189);
+  box-shadow: 2px 2px 10px rgba(99, 95, 95, 0.6),4px 4px 20px rgba(102, 97, 97, 0.4);
+  margin-bottom: 20px;
+  width: 90%;
+  height: 70px;
 }
 
 .menu_Gral{
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+}
+
+nav{
+  height: 100%;
+}
+
+nav > ul{
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
+}
+
+nav > ul > li{
+  height: 100%;
+  list-style: none;
+  position: relative;
+}
+
+nav > ul > li > a{
+  height: 100%;
+  width: 100%;
+  display: flex;
   align-items: center;
-  width: 70%;
- 
+  color: white;
+  padding: 14px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 300ms ease;
 }
 
-.menu_Gral ul{
-  list-style: none;
+nav > ul > li > a:hover{
+  transform: scale(1.1);
+  background-color: #0074C7;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
-.menu_Gral a {
-  border : 2px solid blue;
-  border-radius: 10px;
-  padding : 5px; 
-  text-decoration: none;
-  
-}
-
-.menu_Gral a:hover {
-  background-color: blue;
-  color:white;
-}
-
-
-details{
-  border: 2px solid red;
-
-}
-
-.sumario {
-  border : 2px solid blue;
-  border-radius: 10px;
-  padding : 5px; 
-  text-decoration: none;
-  list-style: none;
-  
-}
-
-.sumario:hover {
-  content: "+";
-  color:red;
-  
-}
