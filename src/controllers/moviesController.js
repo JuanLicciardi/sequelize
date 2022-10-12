@@ -43,6 +43,26 @@ module.exports={
         db.Movie.findByPk(req.params.id)
             .then(movie => res.render('moviesDetail',{movie}))
             .catch(error => console.log(error))
+    },
+
+    //Aqui debemos modificar y completar lo necesario para trabajar con el CRUD
+    add: function (req, res) {
+        // TODO   
+    },
+    create: function (req, res) {
+        // TODO
+    },
+    edit: function(req, res) {
+        // TODO
+    },
+    update: function (req,res) {
+        // TODO
+    },
+    delete: function (req, res) {
+        // TODO
+    },
+    destroy: function (req, res) {
+        // TODO
     }
 
 }

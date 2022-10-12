@@ -8,6 +8,12 @@ router.get('/new', moviesController.new);
 router.get('/recommended', moviesController.recommended);
 
 
-
+//Rutas exigidas para la creación del CRUD
+//router.???('', moviesController.add);
+//router.???('', moviesController.create);
+//router.???('', moviesController.edit);
+//router.???('', moviesController.update);
+//router.???('', moviesController.delete);
+//router.???('', moviesController.destroy);
 
 module.exports = router;
