@@ -17,10 +17,11 @@
             <p>RATING: <%= movie.rating %> </p>
             <p>AWARDS: <%= movie.awards %> </p>
             <p>LENGTH: <%= movie.length + ' min'%> </p>
-            <p>RELEASE DATE: <%= movie.release_date %> </p>
+            <p>RELEASE DATE:  <%= moment(movie.release_date).format('YYYY-MM-DD') %></p>
             <div class="caja_Boton">
                 <a class="boton_Return" href="/movies/">Regresar a Películas</a>
                 <a class="boton_Return" href="/movies/edit/<%= movie.id %>"> Editar Película</a>
+                <a class="boton_borrar" href="/movies/delete/<%= movie.id %>"> Borrar Película</a>
             </div>
         </div>
     </main>

@@ -1,10 +1,25 @@
 
 .listado{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 70%;
 
  
+}
+
+.caja_opcion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.3);
+
+    
 }
 
 .caja_listado{

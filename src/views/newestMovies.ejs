@@ -11,12 +11,12 @@
     <%- include('./partials/header') %> 
     <main class="listado">
         <div class="caja_listado">
-            <h1>ESTRENOS</h1>
+            <h1 class="titulo">ESTRENOS</h1>
             <ul>
                 <% for( let i = 0; i < movies.length; i++ ) { %>
                 <li class="info">
                     <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a> <br>
-                    <%= 'RELEASE DATE: ' + movies[i].release_date %>
+                    <%= 'RELEASE DATE: ' + moment (movies[i].release_date).format('YYYY-MM-DD') %>
                     <hr> 
                 </li>
                 <% } %>

@@ -23,7 +23,10 @@ module.exports={
             limit: 5
         })
             .then(movies => {
-                res.render('newestMovies', {movies});
+                res.render('newestMovies', {
+                    movies,
+                    moment: moment
+                });
             });
     },
 
@@ -43,7 +46,10 @@ module.exports={
 
    detail:(req,res) =>{
         db.Movie.findByPk(req.params.id)
-            .then(movie => res.render('moviesDetail',{movie}))
+            .then(movie => res.render('moviesDetail',{
+                movie,
+                moment : moment
+            }))
             .catch(error => console.log(error))
     },
 
@@ -107,10 +113,22 @@ module.exports={
         
     },
     delete: function (req, res) {
-        // TODO
+       db.Movie.findByPk(req.params.id)
+        .then(movie => res.render('moviesDelete',{
+            Movie:movie
+        }))
+        .catch(error => console.log(error))
     },
     destroy: function (req, res) {
-        // TODO
+        db.Movie.destroy({
+            where : {
+                id : req.params.id
+            }
+        })
+        .then (result => {
+            console.log(result)
+            return res.redirect('/movies')
+        })
+        .catch(error => console.log(error))
     }
-
 }
