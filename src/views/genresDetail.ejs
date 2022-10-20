@@ -17,8 +17,17 @@
             <p>NAME: <%= genre.name %> </p>
             <p>RANKIG: <%= genre.ranking %> </p>
             <div class="caja_Boton">
-                <a class="boton_Return" href="/genres/">Regresar</a>
+                <a class="boton_Return" href="/genres/">Regresar Listado Generos</a>
             </div>
+        </div>
+        <div class="caja_detalle">
+            <h2 class="titulo_Detalle">Películas del Genero <%= genre.name %> </h2>
+            <ul> <% genre.movies.forEach(movie => { %>
+                     <li>
+                        <a href="/movies/detail/<%= movie.id %> "><%= movie.title %> </a>
+                    </li>
+                <% }) %>
+            </ul>
         </div>
     </main>
 </body>

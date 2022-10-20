@@ -35,5 +35,14 @@ module.exports = (sequelize, dataTypes) => {
     
     const Genre = sequelize.define(alias, cols, config)
     
+    Genre.associate = (models) => {
+        Genre.hasMany(models.Movie, {
+            as : 'movies',
+            foreignkey : 'genre_id'
+        })
+    }
+
+
+
     return Genre
 }

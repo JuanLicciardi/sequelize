@@ -45,11 +45,21 @@ module.exports={
     },
 
    detail:(req,res) =>{
-        db.Movie.findByPk(req.params.id)
-            .then(movie => res.render('moviesDetail',{
-                movie,
-                moment : moment
-            }))
+        db.Movie.findByPk(req.params.id,{
+            include : [
+                {
+                    association :'genre'
+                },
+                {
+                    association : 'actors'
+                }
+            ]
+        })
+            .then(movie => {
+                    res.render('moviesDetail',{
+                    movie,
+                    moment : moment
+            })})
             .catch(error => console.log(error))
     },
 
@@ -106,7 +116,8 @@ module.exports={
                 where : {id:req.params.id}
             }
         )
-        .then (response => {
+        .then (result => {
+            console.log(result)
             return res.redirect('/movies/detail/' + req.params.id)
         })
         .catch(error => console.log(error))
@@ -114,9 +125,10 @@ module.exports={
     },
     delete: function (req, res) {
        db.Movie.findByPk(req.params.id)
-        .then(movie => res.render('moviesDelete',{
+        .then(movie => {
+            res.render('moviesDelete',{
             Movie:movie
-        }))
+        })})
         .catch(error => console.log(error))
     },
     destroy: function (req, res) {

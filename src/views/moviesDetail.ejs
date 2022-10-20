@@ -24,6 +24,32 @@
                 <a class="boton_borrar" href="/movies/delete/<%= movie.id %>"> Borrar Película</a>
             </div>
         </div>
+        <div class="caja_detalle">
+            <div >
+                <h4>Género de la pelicula <%= movie.title %> : </h4>
+                <ul>
+                    <li>
+                        <% if (movie.genre) { %>
+                            <a href="/genres/detail/<%= movie.genre.id %>"> <%= movie.genre.name %></a>
+                        <% } else { %>
+                            <h4>Género: No posee clasificación  </h4>
+                        <% } %>
+                    </li>
+                </ul>
+
+            </div>
+            <div>
+                <h4>Actores de la película <%= movie.title %> : </h4>
+                <ul>
+                    <% movie.actors.forEach(actor => { %>
+                        <li>
+                            <a href="/actors/detail/<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %></a></h4>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+
+        </div>
     </main>
 </body>
 </html>

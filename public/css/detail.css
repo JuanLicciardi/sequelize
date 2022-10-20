@@ -1,5 +1,6 @@
 .detalle{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 70%;
 
@@ -15,10 +16,14 @@
     margin-top: 15px;
     padding-top: 10px;
     padding-left: 50px;
+    padding-bottom: 10px;
     border-radius: 15px;
     box-shadow: 10px 10px 22px 10px rgba(0, 0, 0, 0.3);
+  
+}
 
-
+.caja_detalle div {
+    width: 100%;
 }
 
 .titulo_Detalle{
