@@ -65,6 +65,7 @@ module.exports={
             .catch(error => console.log(error))  
     },
 
+    
     create: function (req, res) {
         const {title,release_date, rating,awards,genre_id,length} = req.body
         db.Movie.create({
