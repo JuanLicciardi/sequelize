@@ -81,7 +81,6 @@ module.exports={
         const errors = validationResult(req)
         const {title,release_date, rating,awards,genre_id,length} = req.body
         
-        const genres = db.Genre.findAll();
 
         if(errors.isEmpty()) {
             db.Movie.create({
@@ -95,12 +94,15 @@ module.exports={
             .catch(error => console.log(error))
   
         } else {
-            return res.render('moviesAdd', {
-                errors:errors.mapped(),
-                genres
-            })
+            db.Genre.findAll({ order: ["name"] })
+                .then(genres => 
+                    res.render("moviesAdd", { 
+                        genres, 
+                        errors: errors.mapped(), 
+                        old: req.body }))
+                .catch(error => console.log(error))
         }
-    },
+     },
 
     edit: function(req, res) {
         let genres = db.Genre.findAll({
