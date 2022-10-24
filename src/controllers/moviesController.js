@@ -1,3 +1,5 @@
+const {validationResult, body} = require ('express-validator')
+
 const db = require('../database/models')
 const sequelize = db.sequelize;
 const moment = require('moment');
@@ -76,16 +78,28 @@ module.exports={
     },
 
     create: function (req, res) {
+        const errors = validationResult(req)
         const {title,release_date, rating,awards,genre_id,length} = req.body
-        db.Movie.create({
-            ...req.body,
-            title:title.trim(),
-        })
-        .then(movie => {
-            console.log(movie)
-            return res.redirect('/movies/detail/' + movie.id)
-        })
-        .catch(error => console.log(error))
+        
+        const genres = db.Genre.findAll();
+
+        if(errors.isEmpty()) {
+            db.Movie.create({
+                ...req.body,
+                title:title.trim(),
+            })
+            .then(movie => {
+                console.log(movie)
+                return res.redirect('/movies/detail/' + movie.id)
+            })
+            .catch(error => console.log(error))
+  
+        } else {
+            return res.render('moviesAdd', {
+                errors:errors.mapped(),
+                genres
+            })
+        }
     },
 
     edit: function(req, res) {

@@ -21,6 +21,8 @@
                 <div class="form_contenedor">
                     <label for="title">Title </label>
                     <p><input type="text" name="title" id="" ></p>
+                    <span class=""> <%= locals.errors && errors.title ? errors.title.msg : null  %>  </span>
+           
                 </div>
                 <div class="form_contenedor">
                     <label for="rating">Rating </label>
@@ -38,15 +40,20 @@
                     <label for="length">Length </label>
                     <p><input type="number" name="length" id="" ></p>
                 </div>
+
                 <div class="add_selector">
                     <label for="genre_id">Géneros</label>
                     <select name="genre_id" id="genre_id">
                         <option value="" hidden selected> Seleccione el género</option>
-                        <% genres.forEach(genre => { %>
-                            <option value="<%= genre.id %>"><%= genre.name %></option>
-                        <% }) %>
+                        <% if (locals.errors) { %>
+                            <% genres.forEach(genre => { %>
+                                <option value="<%= genre.id %>"><%= genre.name %></option>
+                            <% }) %>
+                        <% } %>
+
                     </select>
                 </div>
+
                 <div class="add_botones">
                     <button class="boton_Return" type="submit">Agregar Película</button>
                     <a  class="boton_Return" href="/movies">Listado de Películas</a>
